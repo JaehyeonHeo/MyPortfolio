@@ -1,0 +1,49 @@
+﻿@model PortfolioHeo.Models.Contact;
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LandingLayout.cshtml"; 
+}
+
+
+<div class="row">
+    <div class="col-md-8 ml-auto mr-auto">
+        <h2 class="text-center">메세지를 남겨주세요</h2>
+        <form class="contact-form" asp-action="Index">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Name</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="이름" asp-for="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Email</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" asp-for="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <label>Message</label>
+            <textarea class="form-control" rows="4" placeholder="내용을 입력하세요" asp-for="Contents"></textarea>
+            <span asp-validation-for="Contents" class="text-danger"></span>
+            <div class="row">
+                <div class="col">
+                    @if (ViewBag.Message != null)
+                    {
+                        <span class="text-success">@ViewBag.Message</span>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ml-auto mr-auto text-center">
+                    <button type="submit" class="btn btn-center btn-primary btn-success btn-lg btn-fill">
+                        전송
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

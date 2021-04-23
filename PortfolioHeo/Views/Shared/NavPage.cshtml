@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="~/Home/Index">
+                JaeHyeon's Portfolio <i class="nc-icon nc-atom"></i>
+            </a>
+            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Profile">
+                        <i class="nc-icon nc-single-02"></i> Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Portfolio">
+                        <i class="nc-icon nc-layout-11"></i> Portfolio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom"
+                       href="https://github.com/JaehyeonHeo" target="_blank">
+                        <i class="fa fa-github"></i> GitHub
+                        @*<p class="d-lg-none">GitHub</p>*@
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">
+                        <i class="nc-icon nc-lock-circle-open"></i> Login
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

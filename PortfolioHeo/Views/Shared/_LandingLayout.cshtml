@@ -1,0 +1,48 @@
+﻿
+@model PortfolioHeo.Models.Contact
+
+<!DOCTYPE html>
+<html lang="ko">
+
+@Html.Partial("HeadPage.cshtml")
+
+<body class="landing-page sidebar-collapse">
+
+    <!-- Navbar -->
+    @Html.Partial("NavPage.cshtml")
+    <!-- End Navbar -->
+    <div class="page-header" data-parallax="true" style="background-image: url('../assets/img/_LandingBackground.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="motto text-lg-left">
+                <h1>
+                    PORTFOLIO
+                </h1>
+                <h3>
+                    HEO JAEHYEON <i class="nc-icon nc-spaceship"></i>
+                </h3>
+                <br />
+                <a asp-area="" asp-controller="Home" asp-action="Profile" class="btn btn-outline-neutral btn-round">
+                    <i class="nc-icon nc-zoom-split"></i>&nbsp; Watch PROFILE
+                </a>&nbsp; &nbsp;
+                <a asp-area="" asp-controller="Home" asp-action="Portfolio" class="btn btn-outline-neutral btn-round">
+                    <i class="nc-icon nc-zoom-split"></i>&nbsp; Watch PORTFOLIO
+                </a>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        
+        <div class="section landing-section">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    
+    @Html.Partial("FooterPage.cshtml")
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+@Html.Partial("HeadPage.cshtml")
+
+<body class="landing-page sidebar-collapse">
+    <!-- Navbar -->
+    @Html.Partial("NavPage.cshtml")
+    <!-- End Navbar -->
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/_PortfolioBackground.jpg');">
+        <div class="filter"></div>
+    </div>
+    <div class="section profile-content">
+        <div class="container">
+            @RenderBody()
+
+
+
+        </div>
+    </div>
+    @Html.Partial("FooterPage.cshtml")
+</body>
+
+</html>
