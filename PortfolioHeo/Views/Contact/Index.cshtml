@@ -9,7 +9,7 @@
 <div class="col-lg col-md ml-auto mr-auto">
     <div class="card card-login">
         <div class="card-header card-header-primary text-center">
-            <h4 class="card-title" style="margin-top:0px;">Contact Messages List</h4>
+            <h4 class="card-title" style="margin-top:0px;">Mail Box</h4>
             <div class="social-line"></div>
         </div>
         <div class="section section-contacts">
@@ -44,17 +44,19 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Email)
                                 </td>
-
+                                
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Contents)
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        @Html.DisplayFor(modelItem => item.Contents)
+                                    </a>
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.RegDate)
                                 </td>
 
                                 <td>
-                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                                    Delete</a>
                                 </td>
                             </tr>
                             }

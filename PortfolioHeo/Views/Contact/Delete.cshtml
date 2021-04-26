@@ -2,58 +2,9 @@
 
 @{
     ViewData["Title"] = "Delete";
-    Layout = "~/Views/Shared/_LandingLayout.cshtml";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
-@*
-    <!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
-</head>
-<body>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Contact</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Contents)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Contents)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RegDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RegDate)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
-</div>
-</body>
-</html>*@
 
 <div class="col-lg col-md ml-auto mr-auto">
     <div class="card card-login">
@@ -87,11 +38,12 @@
                             @Html.DisplayFor(model => model.RegDate)
                         </dd>
                     </dl>
-
                     <form asp-action="Delete">
                         <input type="hidden" asp-for="Id" />
-                        <input type="submit" value="Delete" class="btn btn-danger" /> |
-                        <a asp-action="Index">Back to List</a>
+                        <input type="submit" value="삭제" class="btn btn-danger" />&nbsp;
+                        <a asp-action="Index" class="btn btn-outline-primary">
+                        리스트
+                        </a>
                     </form>
                 </div>
             </div>

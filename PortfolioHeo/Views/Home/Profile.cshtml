@@ -1,102 +1,67 @@
-﻿@{
-    ViewData["Title"] = "Profile";
-    Layout = "~/Views/Shared/_ProfileLayout.cshtml";
-}
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor hca
 
-<div class="owner">
-    <div class="avatar">
-        <img src="~/assets/img/faces/증명사진.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-    </div>
-    <div class="name">
-        <h4 class="title">
-            허재현
-            <br />
-        </h4>
-        <h6 class="description">C# 개발자</h6>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6 ml-auto mr-auto text-center">
-        <p>동아대학교 경영학과 졸업</p>
-        <p>윈도우 플랫폼기반 IoT시스템 개발자 과정 - 부경대학교 인적자원개발센터</p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
-    </div>
-</div>
 
-@*<div class="nav-tabs-navigation">
-    <div class="nav-tabs-wrapper">
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
-            </li>
-        </ul>
-    </div>
-</div>*@
-<!-- Tab panes -->
-@*<div class="tab-content following">
-    <div class="tab-pane active" id="follows" role="tabpanel">
-        <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-                <ul class="list-unstyled follows">
-                    <li>
-                        <div class="row">
-                            <div class="col-lg-2 col-md-4 col-4 ml-auto mr-auto">
-                                <img src="~/assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                            </div>
-                            <div class="col-lg-7 col-md-4 col-4  ml-auto mr-auto">
-                                <h6>
-                                    Flume
-                                    <br />
-                                    <small>Musical Producer</small>
-                                </h6>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-4  ml-auto mr-auto">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="" checked>
-                                        <span class="form-check-sign"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <hr />
-                    <li>
-                        <div class="row">
-                            <div class="col-lg-2 col-md-4 col-4 mx-auto ">
-                                <img src="~/assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                            </div>
-                            <div class="col-lg-7 col-md-4 col-4">
-                                <h6>
-                                    Banks
-                                    <br />
-                                    <small>Singer</small>
-                                </h6>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-4">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-sign"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+@{ ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_ProfileLayout.cshtml"; }
+
+
+@if (string.IsNullOrEmpty(hca.HttpContext.Session.GetString("UserEmail")))
+{
+<div class="section profile-content">
+    <div class="container">
+        <div class="owner">
+            <div class="avatar">
+                <img src="../assets/img/faces/증명사진.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+            </div>
+            <div class="name">
+                <h4 class="title">
+                    허 재현
+                    <br />
+                </h4>
+                <h6 class="description">C# 개발자</h6>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center">
+                <p>동아대학교 경영학과 졸업 </p>
+                <p>IoT 개발자 과정 - 부경대학교 인적자원개발센터 </p>
+            </div>
+        </div>
+        <br />
     </div>
-    <div class="tab-pane text-center" id="following" role="tabpanel">
-        <h3 class="text-muted">Not following anyone yet :(</h3>
-        <button class="btn btn-warning btn-round">Find artists</button>
+</div> 
+}
+
+else
+{
+<div class="section profile-content">
+    <div class="container">
+        <div class="owner">
+            <div class="avatar">
+                <img src="../assets/img/faces/증명사진.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+            </div>
+            <div class="name">
+                <h4 class="title">
+                    허 재현
+                    <br />
+                </h4>
+                <h6 class="description">C# 개발자</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center">
+                <p>동아대학교 경영학과 졸업 </p>
+                <p>IoT 개발자 과정 - 부경대학교 인적자원개발센터 </p>
+                <br />
+                <br />
+                <a asp-area="" asp-controller="Home" asp-action="Profile" class="btn btn-outline-default btn-round">
+                <i class="fa fa-cog"></i> Settings
+                </a>
+            </div>
+        </div>
+        <br />
     </div>
-</div>*@
+</div>
+}
+

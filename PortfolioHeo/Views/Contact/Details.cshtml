@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_LandingLayout.cshtml";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
 
@@ -38,10 +38,14 @@
                             @Html.DisplayFor(model => model.RegDate)
                         </dd>
                     </dl>
-                </div>
-                <div>
-                    <a asp-action="Delete" asp-route-id="@Model.Id">삭제</a> |
-                    <a asp-action="Index">리스트</a>
+                    <div>
+                        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">
+                            삭제
+                        </a>
+                        <a asp-action="Index" class="btn btn-outline-primary">
+                            리스트
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
