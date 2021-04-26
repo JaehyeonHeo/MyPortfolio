@@ -15,6 +15,8 @@ namespace PortfolioHeo.Data
 
         public DbSet<PortfolioHeo.Models.Account> Account { get; set; }
 
+        public DbSet<PortfolioHeo.Models.ProfileSetting> ProfileSetting { get; set; }
+
         
     }
 }
