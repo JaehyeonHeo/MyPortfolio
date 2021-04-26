@@ -1,25 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
-
 @Html.Partial("HeadPage.cshtml")
 
-<body class="landing-page sidebar-collapse">
+<body class="register-page sidebar-collapse">
     <!-- Navbar -->
     @Html.Partial("NavPage.cshtml")
     <!-- End Navbar -->
-    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/_PortfolioBackground.jpg');">
-        <div class="filter"></div>
-    </div>
-    <div class="section profile-content">
+    <div class="page-header" data-parallax="true" style="background-image: url('../assets/img/_LandingBackground.jpg');">
         <div class="container">
-            @RenderBody()
-
-
-
+            <div class="row">
+                <div class="col">
+                    @RenderBody()
+                </div>
+            </div>
         </div>
     </div>
+
     @Html.Partial("FooterPage.cshtml")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>
+
+

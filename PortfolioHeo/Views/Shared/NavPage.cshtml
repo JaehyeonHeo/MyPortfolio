@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor hca
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
     <div class="container">
@@ -33,13 +34,28 @@
                         @*<p class="d-lg-none">GitHub</p>*@
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">
-                        <i class="nc-icon nc-lock-circle-open"></i> Login
-                    </a>
-                </li>
-
-
+                
+                @if (string.IsNullOrEmpty(hca.HttpContext.Session.GetString("UserEmail")))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">
+                            <i class="nc-icon nc-lock-circle-open"></i> Login
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">
+                            <i class="nc-icon nc-lock-circle-open"></i> Logout (@hca.HttpContext.Session.GetString("UserEmail"))
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">
+                            <i class="nc-icon nc-settings-gear-65"></i> Contact
+                        </a>
+                    </li>
+                }
             </ul>
         </div>
     </div>

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PortfolioHeo.Data;
 using PortfolioHeo.Models;
@@ -19,33 +22,59 @@ namespace PortfolioHeo.Controllers
         // GET: Contact
         public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Contact.ToListAsync());
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
+        // GET: Contact/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                try
-                {
-                    contact.RegDate = DateTime.Now;
-                    _context.Add(contact);
-                    await _context.SaveChangesAsync();
-
-                    ViewBag.Message = "감사합니다. 연락드리겠습니다!"; 
-                }
-                catch (Exception ex)
-                {
-                    ModelState.Clear();
-                    ViewBag.Message = $"예외가 발생했습니다. {ex.Message}"; 
-                    
-                }
-                //return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            return View();
+
+            var contact = await _context.Contact
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (contact == null)
+            {
+                return NotFound();
+            }
+
+            return View(contact);
         }
 
-       
+        // GET: Contact/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var contact = await _context.Contact
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (contact == null)
+            {
+                return NotFound();
+            }
+
+            return View(contact);
+        }
+
+        // POST: Contact/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var contact = await _context.Contact.FindAsync(id);
+            _context.Contact.Remove(contact);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool ContactExists(int id)
+        {
+            return _context.Contact.Any(e => e.Id == id);
+        }
     }
 }

@@ -47,7 +47,6 @@ namespace PortfolioHeo.Controllers
                     ViewBag.Message = $"예외가 발생했습니다. {ex.Message}";
 
                 }
-                //return RedirectToAction(nameof(Index));
             }
             return View();
         }
@@ -60,15 +59,15 @@ namespace PortfolioHeo.Controllers
         {
             return View();
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
             return View();
         }
-
-
-
-
 
 
 

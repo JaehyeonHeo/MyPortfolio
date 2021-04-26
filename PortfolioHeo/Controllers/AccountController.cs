@@ -39,14 +39,14 @@ namespace PortfolioHeo.Controllers
 
                 else //로그인성공
                 {
-                    //HttpContext.Session.SetString("UserEmail", result.Email);
+                    HttpContext.Session.SetString("UserEmail", result.Email);
                     return RedirectToAction("Index", "Home");
                 }
             }
             return View("Login");
         }
 
-        private object CheckAccount(string email, string password)
+        private Account CheckAccount(string email, string password)
         {
             return _context.Account.SingleOrDefault(a => a.Email.Equals(email) && a.Password.Equals(password));
         }

@@ -1,5 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model PortfolioHeo.Models.Account
+
 @{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
+<div class="col-lg-4 col-md-6 ml-auto mr-auto">
+    <div class="card card-login">
+        <form class="form" asp-action="Login">
+            <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Login</h4>
+                <div class="social-line">
+
+                </div>
+            </div>
+            <p class="description text-center">&nbsp;</p>
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="Email" asp-for="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" class="form-control" placeholder="Password" asp-for="Password">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ml-auto mr-auto text-center">
+                    <button type="submit" class="btn btn-primary btn-raised">
+                        Login
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (ViewBag.Message != null)
+                    {
+                        <span>@ViewBag.Message</span>
+                    }
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

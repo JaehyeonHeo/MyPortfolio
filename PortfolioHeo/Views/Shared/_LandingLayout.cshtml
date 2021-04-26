@@ -34,15 +34,16 @@
         </div>
     </div>
     <div class="main">
-        
+
         <div class="section landing-section">
             <div class="container">
                 @RenderBody()
             </div>
         </div>
     </div>
-    
+
     @Html.Partial("FooterPage.cshtml")
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>
