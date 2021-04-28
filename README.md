@@ -12,10 +12,10 @@ _____________________________________
 #### <메인화면에 있는 메시지 남기기 기능>
 ![PortfolioHeo](https://github.com/JaehyeonHeo/MyPortfolio/blob/main/Images/MyPortfolioWeb%20(2).png?raw=true "메인화면에 있는 메시지 남기기 기능")
 #### <프로필 화면>
-##### settings 버튼은 로그인 했을때만 표시 
+* settings 버튼은 로그인 했을때만 표시 
 ![PortfolioHeo](https://github.com/JaehyeonHeo/MyPortfolio/blob/main/Images/MyPortfolioWeb%20(3).png?raw=true "프로필 화면")
 #### <메시지 확인>
-##### Mail Box에서 메세지 확인 
+* Mail Box에서 메세지 확인 
 ![PortfolioHeo](https://github.com/JaehyeonHeo/MyPortfolio/blob/main/Images/MyPortfolioWeb%20(4).png?raw=true "메시지 확인")
 
 
