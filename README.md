@@ -6,7 +6,7 @@ navigation bar에서 github로 바로 이동할 수 있는 button도 있다.
 로그인을 하면 mail box를 확인할 수 있고 Profile페이지에서 프로필 세팅이 가능하다. 
 ```
 
-_____________________________________
+
 #### <메인화면>
 ![PortfolioHeo](https://github.com/JaehyeonHeo/MyPortfolio/blob/main/Images/MyPortfolioWeb%20(1).png?raw=true "메인화면")
 #### <메인화면에 있는 메시지 남기기 기능>
