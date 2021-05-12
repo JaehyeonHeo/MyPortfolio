@@ -34,4 +34,4 @@ navigation bar에서 github로 바로 이동할 수 있는 button도 있다.
 
 
 ______________________
-## [🔙뒤로]( https://github.com/JaehyeonHeo)
+## [🔙뒤로]( https://github.com/JaehyeonHeo?tab=repositories)
